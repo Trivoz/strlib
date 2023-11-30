@@ -52,5 +52,5 @@ jobs:
         python -m pip install black
     - name: Lint with black
       run: |
-        export TARGET = ${{matrix.python-version}}
+        export TARGET=${{matrix.python-version}}
         black --target-version $TARGET
