@@ -52,5 +52,8 @@ jobs:
         python -m pip install black
     - name: Lint with black
       run: |
-        export TARGET=${{matrix.python-version}}
-        black --target-version $TARGET
+        IFS=. read array <<< ${{matrix.python-version}}
+        first=${array:0:1} second=${array:2:1}
+        ver=( ${first}.${second} )
+        echo "${ver[*]}"
+        black --target-version $ver
