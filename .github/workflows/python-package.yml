@@ -52,4 +52,4 @@ jobs:
         python -m pip install black
     - name: Lint with black
       run: |
-        black --target-version $(${{ matrix.python-version }}) --verbose
+        black --target-version $(${{ matrix.python-version }})
