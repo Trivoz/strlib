@@ -38,7 +38,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11"]
+        python-version: ["3.11"]
 
     steps:
     - uses: actions/checkout@v3
@@ -52,4 +52,4 @@ jobs:
         python -m pip install black
     - name: Lint with black
       run: |
-        black --target-version ${{ matrix.python-version }} --verbose
+        black --target-version $(${{ matrix.python-version }}) --verbose
